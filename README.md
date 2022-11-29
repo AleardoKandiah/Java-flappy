@@ -5,7 +5,6 @@
 Java-flappy is a clone of the original Flappy bird built in Java
 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
 ## Folder Structure
 
