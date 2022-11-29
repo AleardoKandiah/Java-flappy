@@ -1,4 +1,5 @@
 package de.leon.flappybird.main;
+
 import java.awt.Canvas;
 
 SuppressWarnings("serial")
