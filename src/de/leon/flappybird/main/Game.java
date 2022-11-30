@@ -8,6 +8,9 @@ public class Game extends Canvas implements Runnable {
     public static final int WIDTH = 432;    
     public static final int HEIGHT = 768;
 
+    public boolean running;
+
+
     public static void main(String[] args) {
 
     }
@@ -36,11 +39,26 @@ public class Game extends Canvas implements Runnable {
         long pastTime = System.nanoTime();
         double amountOfTicks = 60.0;
         double ns = 1000000000/ amountOfTicks;
-        double delta;
+        double delta = 0;
         long timer = System.currentTimeMillis();
-        int updates;
-        int frames;
+        int updates = 0;
+        int frames = 0;
 
+        while(running){
+            long now = System.nanoTime();
+            delta += (now - pastTime) / ns;
+            pastTime = now;
+
+            while(delta > 0){
+                tick();
+                updates++;
+
+                render();
+                frames++;
+
+                delta--;
+            } 
+        }
     }
 
 
