@@ -7,8 +7,9 @@ public class Game extends Canvas implements Runnable {
     
     public static final int WIDTH = 432;    
     public static final int HEIGHT = 768;
-
+    
     public boolean running;
+	public static boolean gameover;
 
 
     public static void main(String[] args) {
