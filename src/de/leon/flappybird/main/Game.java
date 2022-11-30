@@ -13,7 +13,7 @@ public class Game extends Canvas implements Runnable {
 
 	public static BufferedImage img_gameover;
 	public static BufferedImage background;
-
+	public static Ground ground;
 
     public static void main(String[] args) {
 
