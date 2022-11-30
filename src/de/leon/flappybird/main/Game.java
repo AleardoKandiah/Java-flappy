@@ -11,6 +11,9 @@ public class Game extends Canvas implements Runnable {
     public boolean running;
 	public static boolean gameover;
 
+	public static BufferedImage img_gameover;
+	public static BufferedImage background;
+
 
     public static void main(String[] args) {
 
