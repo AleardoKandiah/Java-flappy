@@ -16,7 +16,12 @@ public class Game extends Canvas implements Runnable {
 	public static Ground ground;
 	public static Bird bird;
 
-
+	public static Button startButton;
+	
+	public static int score;
+	
+	Thread thread;
+	ServerSocket serverSocket; 
 
     public static void main(String[] args) {
 
