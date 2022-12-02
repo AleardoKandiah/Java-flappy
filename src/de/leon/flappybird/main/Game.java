@@ -21,7 +21,7 @@ public class Game extends Canvas implements Runnable {
 	public static int score;
 	
 	Thread thread;
-	ServerSocket serverSocket;  
+	ServerSocket serverSocket;   
 
     public static void main(String[] args) {
 
