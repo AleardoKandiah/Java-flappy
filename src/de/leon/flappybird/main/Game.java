@@ -8,6 +8,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.net.ServerSocket;
 
+import de.leon.flappybird.gameobjects.Bird;
 
 
 @SuppressWarnings("serial")
