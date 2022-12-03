@@ -2,13 +2,14 @@ package de.leon.flappybird.main;
 
 import java.awt.Canvas;
 
-SuppressWarnings("serial")
+
+@SuppressWarnings("serial")
 public class Game extends Canvas implements Runnable {
-    
-    public static final int WIDTH = 432;    
-    public static final int HEIGHT = 768;
-    
-    public boolean running;
+
+	public static final int WIDTH = 432;
+	public static final int HEIGHT = 768;
+
+	public boolean running;
 	public static boolean gameover;
 
 	public static BufferedImage img_gameover;
@@ -21,57 +22,106 @@ public class Game extends Canvas implements Runnable {
 	public static int score;
 	
 	Thread thread;
-	ServerSocket serverSocket;   
+	ServerSocket serverSocket;
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+		new Window(WIDTH, HEIGHT, "FlappyBird [Springen mit Leertaste]", new Game());
+	}
 
-    }
+	public synchronized void start() {
+		running = true;
+		thread = new Thread();
+		thread.start();
+		run();
+	}
 
-    public synchronized void start() {
+	public void init() {
+		addKeyListener(new KeyHandler());
+		addMouseListener(new MouseHandler());
 
-    }
-    
-    public void init() {
+		img_gameover = GraphicsLoader.loadGraphics("gameover.png");
+		background = GraphicsLoader.loadGraphics("background.png");
+		ground = new Ground();
 
-    }
+		bird = new Bird(50, 50, 51, 36);
+		
+		startButton = new Button(Game.WIDTH / 2 - 156 / 2, 200, 156, 87, GraphicsLoader.loadGraphics("playbutton.png"));
+	}
 
-    public void tick() {
+	public void tick() {
+		if (!gameover) {
+			ObjectHandler.tick();
+			ground.tick();
+		}
+	}
 
-    }
+	public void render() {
+		BufferStrategy bs = this.getBufferStrategy();
 
-    public void render() {
+		if (bs == null) {
+			createBufferStrategy(3);
+			return;
+		}
 
-    }
+		Graphics g = bs.getDrawGraphics();
 
-    @Override
-    public void run() {
-        init();
-        this.requestFocus();
+		g.drawImage(background, 0, 0, null);
+		ground.render(g);
 
-        long pastTime = System.nanoTime();
-        double amountOfTicks = 60.0;
-        double ns = 1000000000/ amountOfTicks;
-        double delta = 0;
-        long timer = System.currentTimeMillis();
-        int updates = 0;
-        int frames = 0;
+		ObjectHandler.render(g);
 
-        while(running){
-            long now = System.nanoTime();
-            delta += (now - pastTime) / ns;
-            pastTime = now;
+		if(gameover) {
+			g.drawImage(img_gameover, Game.WIDTH / 2 - 288 / 2, 130, null);
+			Game.startButton.render(g);
+		}
+		
+		g.setFont(new Font("Arial", Font.BOLD, 48));
+		g.setColor(Color.WHITE);
+		
+		String s = Integer.toString(score);
+		int textWidth = g.getFontMetrics().stringWidth(s);
+		
+		g.drawString(s, Game.WIDTH / 2 - textWidth / 2, 40);
+		
+		g.dispose();
+		bs.show();
+	}
 
-            while(delta > 0){
-                tick();
-                updates++;
+	@Override
+	public void run() {
+		init();
+		this.requestFocus();
 
-                render();
-                frames++;
+		long pastTime = System.nanoTime();
+		double amountOfTicks = 60.0;
+		double ns = 1000000000 / amountOfTicks;
+		double delta = 0;
+		long timer = System.currentTimeMillis();
+		int updates = 0;
+		int frames = 0;
 
-                delta--;
-            } 
-        }
-    }
+		while (running) {
+			long now = System.nanoTime();
+			delta += (now - pastTime) / ns;
+			pastTime = now;
 
+			while (delta > 0) {
+				tick();
+				updates++;
 
+				render();
+				frames++;
+
+				delta--;
+			}
+			
+			if (System.currentTimeMillis() - timer > 1000) {
+				timer += 1000;
+				System.out.println("FPS: " + frames + " | TICKS: " + updates);
+				TubeHandler.tick();
+				updates = 0;
+				frames = 0;
+			}
+		}
+	}
 }
