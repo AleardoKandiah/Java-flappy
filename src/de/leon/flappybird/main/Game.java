@@ -2,6 +2,7 @@ package de.leon.flappybird.main;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Font;
 
 
 @SuppressWarnings("serial")
