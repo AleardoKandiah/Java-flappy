@@ -9,7 +9,13 @@ import java.awt.image.BufferedImage;
 import java.net.ServerSocket;
 
 import de.leon.flappybird.gameobjects.Bird;
-
+import de.leon.flappybird.gameobjects.Ground;
+import de.leon.flappybird.handlers.KeyHandler;
+import de.leon.flappybird.handlers.MouseHandler;
+import de.leon.flappybird.handlers.ObjectHandler;
+import de.leon.flappybird.handlers.TubeHandler;
+import de.leon.flappybird.loaders.GraphicsLoader;
+import de.leon.flappybird.supers.Button;                           
 
 @SuppressWarnings("serial")
 public class Game extends Canvas implements Runnable {
