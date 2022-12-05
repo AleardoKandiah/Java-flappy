@@ -15,7 +15,7 @@ import de.leon.flappybird.handlers.MouseHandler;
 import de.leon.flappybird.handlers.ObjectHandler;
 import de.leon.flappybird.handlers.TubeHandler;
 import de.leon.flappybird.loaders.GraphicsLoader;
-import de.leon.flappybird.supers.Button;                   
+import de.leon.flappybird.supers.Button;                  
 
 @SuppressWarnings("serial")
 public class Game extends Canvas implements Runnable {
