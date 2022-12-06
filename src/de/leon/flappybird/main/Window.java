@@ -5,6 +5,7 @@ import java.net.ServerSocket;
 
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class Window extends JFrame {
 	
 	public Window(int width, int height, String title, Game game) {
