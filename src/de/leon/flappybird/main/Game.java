@@ -30,7 +30,6 @@ public class Game extends Canvas implements Runnable {
 	public static BufferedImage background;
 	public static Ground ground;
 	public static Bird bird;
-
 	public static Button startButton;
 	
 	public static int score;
