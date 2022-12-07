@@ -1,5 +1,4 @@
 package de.leon.flappybird.supers;
-
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
