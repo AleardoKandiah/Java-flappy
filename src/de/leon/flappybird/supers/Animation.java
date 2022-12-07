@@ -51,7 +51,6 @@ public class Animation {
 	}
 
 	public void render(Graphics g) {
-
 		if (target == null) {
 			g.drawImage(images[currentImage], x, y, null);
 		} else {
