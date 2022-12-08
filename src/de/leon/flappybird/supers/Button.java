@@ -12,7 +12,6 @@ public class Button {
 	public int height;
 
 	public boolean pressed;
-
 	private BufferedImage image;
 
 	public Button(int x, int y, int width, int height, BufferedImage image) {
