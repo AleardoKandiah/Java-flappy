@@ -2,7 +2,6 @@ package de.leon.flappybird.supers;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
 public abstract class GameObject {
 	
 	protected int x;
