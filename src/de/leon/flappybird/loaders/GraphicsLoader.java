@@ -1,5 +1,4 @@
 package de.leon.flappybird.loaders;
-
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
