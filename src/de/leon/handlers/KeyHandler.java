@@ -1,8 +1,3 @@
-package de.leon.handlers;
-
-public class KeyHandler {
-    
-}
 package de.leon.flappybird.handlers;
 
 import java.awt.event.KeyEvent;
