@@ -1,5 +1,4 @@
 package de.leon.flappybird.handlers;
-
 import java.awt.Graphics;
 import java.util.LinkedList;
 
