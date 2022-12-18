@@ -17,8 +17,8 @@ public class TubeHandler {
 	public static int maxSize = area - spacing - minSize;
 	public static int delay = 1;
 	public static int now;
-	
-    
+
+
 	public static void spawnTube() {
 		int heightTop = random.nextInt(maxSize) + 1;
 		
