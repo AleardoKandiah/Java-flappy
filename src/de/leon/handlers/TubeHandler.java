@@ -1,8 +1,3 @@
-package de.leon.handlers;
-
-public class TubeHandler {
-    
-}
 package de.leon.flappybird.handlers;
 
 import java.util.Random;
