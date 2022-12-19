@@ -20,7 +20,6 @@ public class TubeHandler {
 
 
 	
-
 	public static void spawnTube() {
 		int heightTop = random.nextInt(maxSize) + 1;
 		
