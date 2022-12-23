@@ -1,5 +1,4 @@
 package de.leon.flappybird.handlers;
-
 import java.util.Random;
 
 import de.leon.flappybird.enums.TubeType;
