@@ -5,7 +5,6 @@ import de.leon.flappybird.enums.TubeType;
 import de.leon.flappybird.gameobjects.Tube;
 import de.leon.flappybird.main.Game;
 
-
 public class TubeHandler {
 
 	private static Random random = new Random();
@@ -20,7 +19,7 @@ public class TubeHandler {
 
 	public static void spawnTube() {
 		int heightTop = random.nextInt(maxSize) + 1;
-		
+		            
 		while(heightTop < minSize) {
 			heightTop = random.nextInt(maxSize) + 1;
 		}
