@@ -7,7 +7,6 @@ import de.leon.flappybird.main.Game;
 
 
 
-
 public class TubeHandler {
 
 	private static Random random = new Random();
