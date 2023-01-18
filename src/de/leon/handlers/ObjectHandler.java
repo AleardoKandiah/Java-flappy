@@ -9,6 +9,8 @@ import de.leon.flappybird.supers.GameObject;
 
 
 
+
+
 public class ObjectHandler {
 
 	public static LinkedList<GameObject> list = new LinkedList<GameObject>();
