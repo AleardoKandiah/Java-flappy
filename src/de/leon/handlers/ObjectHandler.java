@@ -1,8 +1,7 @@
 package de.leon.flappybird.handlers;
 
 import java.awt.Graphics;
-import java.util.LinkedLi
-st;
+import java.util.LinkedList;
 
 import de.leon.flappybird.supers.GameObject;
 
